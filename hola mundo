@@ -1,1 +1,4 @@
 print("hola mundo")
+print("16")
+input("")
+print("tienes 16 años")
