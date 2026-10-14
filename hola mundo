@@ -1,3 +1,13 @@
+nom=input("¿Cuál es tu nombre? ")
+print("Hola " + nom)
+
+num=1
+print(num)
+num=2.5
+print(num)
+num='ups'
+print(num)
+
 print("hola mundo")
 print("16")
 input("")
