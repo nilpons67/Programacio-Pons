@@ -1,14 +1,5 @@
 nom=input("¿Cuál es tu nombre? ")
-print("Hola " + nom)
-
-num=1
-print(num)
-num=2.5
-print(num)
-num='ups'
-print(num)
-
+year=input('Cuando naciste? ')
+print("Hola " + nom + ' tienes ' + str(2026 - int(year)) + ' años')
 print("hola mundo")
-print("16")
-input("")
-print("tienes 16 años")
+#asi se puede hacer un comentario
