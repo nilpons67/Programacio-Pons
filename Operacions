@@ -1,1 +1,19 @@
+#operacions amb numeros
+num1= input("Introdueix el primer número: ")
+num2= input("Introdueix el segon número: ")
+
+print("La suma és: " + str(int (num1) + int(num2)))
+print("La resta és: " + str(int(num1) - int(num2)))
+print("La multiplicació és: " + str(int(num1) * int(num2)))
+print("La divisió és: " + str(int(num1) / int(num2)))
+print("La divisió entera és: " + str(int(num1) // int(num2)))
+print("El mòdul és: " + str(int(num1) % int(num2)))
+print("La potència és: " + str(int(num1) ** int(num2)))
+
+#operacions amb caracters
+text1= input("Introdueix el primer text: ")
+text2= input("Introdueix el segon text: ")
+
+print("La concatenació és: " + text1 + text2)
+print('la multiplicació del primer text per 3 és: ' + text1 * 3)
 
