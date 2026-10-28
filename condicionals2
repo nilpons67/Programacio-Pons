@@ -1,1 +1,20 @@
+num1= input("Introdueix el primer número: ")
+num2= input("Introdueix el segon número: ")
 
+print('quina es la operació que vols fer?')
+operation = input()
+
+if operation == "suma":
+    print("La suma és: " + str(int (num1) + int(num2)))
+elif operation == "resta":
+    print("La resta és: " + str(int(num1) - int(num2)))
+elif operation == "multiplicació":
+    print("La multiplicació és: " + str(int(num1) * int(num2)))
+elif operation == "divisió":
+    print("La divisió és: " + str(int(num1) / int(num2)))
+elif operation == "divisió entera":
+    print("La divisió entera és: " + str(int(num1) // int(num2)))
+elif operation == "mòdul":
+    print("El mòdul és: " + str(int(num1) % int(num2)))
+elif operation == "potència":
+    print("La potència és: " + str(int(num1) ** int(num2)))
