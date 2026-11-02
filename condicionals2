@@ -2,19 +2,73 @@ num1= input("Introdueix el primer número: ")
 num2= input("Introdueix el segon número: ")
 
 print('quina es la operació que vols fer?')
+options = ["suma", "resta", "multiplicació", "divisió", "divisió entera", "mòdul", "potència"]
+print("Les opcions són: " + str(options))
+n1= int(num1)
+n2= int(num2)
+
 operation = input()
 
 if operation == "suma":
-    print("La suma és: " + str(int (num1) + int(num2)))
+    print('Quina suma vols fer, "n1 + n2" o "n2 + n1"?')
+    choice = input()
+    if choice == "n1 + n2":
+        print("La suma és: " + str(n1 + n2))
+    elif choice == "n2 + n1":
+        print("La suma és: " + str(n2 + n1))
+
 elif operation == "resta":
-    print("La resta és: " + str(int(num1) - int(num2)))
+    print('Quina resta vols fer, "n1 - n2" o "n2 - n1"?')
+    choice = input()
+    if choice == "n1 - n2":
+        print("La resta és: " + str(n1 - n2))
+    elif choice == "n2 - n1":
+        print("La resta és: " + str(n2 - n1))
+
 elif operation == "multiplicació":
-    print("La multiplicació és: " + str(int(num1) * int(num2)))
+    print('Quina multiplicació vols fer, "n1 * n2" o "n2 * n1"?')
+    choice = input()
+    if choice == "n1 * n2":
+        print("La multiplicació és: " + str(n1 * n2))
+    elif choice == "n2 * n1":
+        print("La multiplicació és: " + str(n2 * n1))
+
 elif operation == "divisió":
-    print("La divisió és: " + str(int(num1) / int(num2)))
+    print('Quina divisió vols fer, "n1 / n2" o "n2 / n1"?')
+    choice = input()
+    if choice == "n1 / n2":
+        print("La divisió és: " + str(n1 / n2))
+    elif choice == "n2 / n1":
+        print("La divisió és: " + str(n2 / n1))
+    if n2 == 0:
+        print("No es pot dividir per zero")
+
 elif operation == "divisió entera":
-    print("La divisió entera és: " + str(int(num1) // int(num2)))
+    print('Quina divisió entera vols fer, "n1 // n2" o "n2 // n1"?')
+    choice = input()
+    if choice == "n1 // n2":
+        print("La divisió entera és: " + str(n1 // n2))
+    elif choice == "n2 // n1":
+        print("La divisió entera és: " + str(n2 // n1))
+    if n2 == 0:
+        print("No es pot dividir per zero")
+
 elif operation == "mòdul":
-    print("El mòdul és: " + str(int(num1) % int(num2)))
+    print('Quin mòdul vols fer, "n1 % n2" o "n2 % n1"?')
+    choice = input()
+    if choice == "n1 % n2":
+        print("El mòdul és: " + str(n1 % n2))
+    elif choice == "n2 % n1":
+        print("El mòdul és: " + str(n2 % n1))
+    if n2 == 0:
+        print("No es pot calcular el mòdul per zero")
+
 elif operation == "potència":
-    print("La potència és: " + str(int(num1) ** int(num2)))
+    print('Quina potència vols fer, "n1 ** n2" o "n2 ** n1"?')
+    choice = input()
+    if choice == "n1 ** n2":
+        print("La potència és: " + str(n1 ** n2))
+    elif choice == "n2 ** n1":
+        print("La potència és: " + str(n2 ** n1))
+    if n2 < 0:
+        print("No es pot calcular la potència amb exponent negatiu")
