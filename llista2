@@ -1,1 +1,33 @@
+numeros = []
 
+num = int(input("Introduce el número 1: "))
+numeros.append(num)
+
+num = int(input("Introduce el número 2: "))
+if num < numeros[0]:
+    numeros.insert(0, num)
+else:
+    numeros.append(num)
+
+num = int(input("Introduce el número 3: "))
+if num < numeros[0]:
+    numeros.insert(0, num)
+else:
+    if num < numeros[1]:
+        numeros.insert(1, num)
+    else:
+        numeros.append(num)
+
+num = int(input("Introduce el número 4: "))
+if num < numeros[0]:
+    numeros.insert(0, num)
+else:
+    if num < numeros[1]:
+        numeros.insert(1, num)
+    else:
+        if num < numeros[2]:
+            numeros.insert(2, num)
+        else:
+            numeros.append(num)
+
+print("La llista ordenada es:", numeros)

@@ -35,3 +35,11 @@ if len(dni)==9:
         print("DNI incorrecte")
         print("La lletra correcta és: " + lletres[num % 23])
         print("DNI correcte: " + dni[0:8] + lletres[num % 23])
+#funcio append
+print('la llista es:', llista)
+llista.append('Gat')
+print(llista)
+
+#funcio Insert
+llista.insert(1, 'Gos')
+print(llista)
