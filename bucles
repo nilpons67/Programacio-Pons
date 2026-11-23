@@ -22,4 +22,56 @@ for i in range(17,100):
     if(i % 2 == 0):
         print(i, end=" ")
 
+print("")
+
+noms=[]
+
+for i in range(3):
+    nom = input("Afegeix un nom: ")
+    noms.append(nom)
+
+print("Els noms introduïts són:", noms)
+
+for nom in noms:
+    print(nom)
+
+paraula=noms[0]
+
+a=0
+
+for lletra in paraula:
+    if lletra == 'a':
+        a += 1
+
+print("La paraula", paraula, "té", a, "lletres 'a'.")
+
+print("")
+for i in range(17,100):
+    if(i % 2 == 0):
+        print(i, end=" ")
+print("")
+
+#bucle de bucle amb elements
+print("")
+notes = [[6,6,7,10,9],[10,7,6,7,7],[5,5,10,7,10]]
+compt=0
+for i in range(len(notes)):
+    for j in range(len(notes[i])):
+        if notes[i][j] == 10:
+            compt += 1
+            print(f"La nota de 10 està a la fila {i} i columna {j}")
+
+print("El nombre de 10s és:", compt)
+
+print("")
+#bucle condicional
+
+secret = 7
+while True:
+    num = int(input("Introdueix un número: "))
+    if num == secret:
+        print("Has encertat!")
+        break
+    else:
+        print("Has fallat!")
 

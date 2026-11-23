@@ -1,1 +1,94 @@
+import random
 
+colors = ["Blau", "Verd", "Groc", "Vermell", "Taronja", "Lila"]
+longitud = 4
+intents = 10
+
+jugar = "s"
+while jugar == "s" or jugar == "S":
+    secret = []
+    for _ in range(longitud):
+        color_triat = random.choice(colors)
+        secret.append(color_triat)
+
+    print("")
+    print("Estas a un joc de Mastermind!")
+    print("Els colors possibles són:", colors)
+    print("Tens", intents, "intents per endevinar la combinació secreta de", longitud, "colors (es poden repetir colors).")
+    print("Pistes: 'X' (color i posició correctes), 'O' (color correcte en posició incorrecta) i 'Z' per a la resta.")
+    print("Escriu els colors separats per espais (majúscules o minúscules).")
+    print("")
+
+    intentactual = 1
+    guanyat = False
+
+    while intentactual <= intents and not guanyat:
+        jugada = []
+        valid = False
+
+        while not valid:
+            text_entrada = input("Intent " + str(intentactual) + "/" + str(intents) + ": Introdueix " + str(longitud) + " colors separats per espais: ")
+            paraules = text_entrada.split()
+
+            if len(paraules) != longitud:
+                print("Error: has d'escriure exactament", longitud, "colors.")
+            else:
+                tot_be = True
+                for i in range(longitud):
+                    c = paraules[i].capitalize()
+                    paraules[i] = c
+                    if c not in colors:
+                        tot_be = False
+                        print("Error: el color '" + c + "' no és vàlid.")
+
+                if tot_be:
+                    jugada = paraules
+                    valid = True
+
+        pistes = [""] * longitud
+        secret_usat = [False] * longitud
+        jugaada_avaluada = [False] * longitud
+
+        # Primer pas: encerts exactes (X)
+        for i in range(longitud):
+            if jugada[i] == secret[i]:
+                pistes[i] = "X"
+                jugaada_avaluada[i] = True
+                secret_usat[i] = True
+
+        # Segon pas: colors en altra posició (O) i la resta (Z)
+        for i in range(longitud):
+            if not jugaada_avaluada[i]:
+                coincidencia = False
+                for j in range(longitud):
+                    if not coincidencia and not secret_usat[j] and jugada[i] == secret[j]:
+                        pistes[i] = "O"
+                        secret_usat[j] = True
+                        coincidencia = True
+                if not coincidencia:
+                    pistes[i] = "Z"
+
+        resum_pistes = ""
+        for p in pistes:
+            resum_pistes = resum_pistes + p
+
+        print("Jugada:", jugada, "| Pistes:", resum_pistes)
+        print("")
+
+        if resum_pistes == "X" * longitud:
+            guanyat = True
+        else:
+            intentactual = intentactual + 1
+
+    if guanyat:
+        print("Felicitats! Has encertat el codi secret en", intentactual, "intents.")
+    else:
+        codi_final = ""
+        for c in secret:
+            codi_final = codi_final + c + " "
+        print("Has esgotat els intents. El codi secret era:", codi_final.strip())
+
+    print("")
+    jugar = input("Vols jugar una altra partida? (s/n): ")
+
+print("")
